@@ -1,0 +1,38 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/login.css '%}">
+</head>
+<body style="background-image:url('{% static 'images/login.jpg' %}">
+<div class="login">
+<h3 align="center" style="color:red">{{ msg }}</h3>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <h1 align="center">Welcome to login page</h1>
+    <table align="center">
+        <tr>
+            <td>UserName:</td>
+            <td><input type="text" name="txtName"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="txtPassword"></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2"><input type="submit" name="btnlogin" value="login"></td>
+        </tr>
+        <tr>
+            <td align="right" colspan="2">
+                <a href="{% url 'reg' %}">Create a New account</a>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>
